@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace NFL.Reports
 {
-    public class Program
+    public class NFLStatReport
     {
         public static void Main(string[] args)
         {

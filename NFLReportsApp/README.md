@@ -1,4 +1,6 @@
-# NFLStatReports My C# project is a API console app that pulls NFL stat data from an API.
+# NFLReportsApp
+
+My C# project is an API console app that pulls NFL stat data from an API.
 
 
 # Basic Requirements

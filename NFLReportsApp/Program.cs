@@ -106,8 +106,9 @@ namespace NFLReportsApp
                     return option;
                 }
                 else
-                {                  
-                    Console.WriteLine($"Invalid player name {option}");
+                {
+                    //  Console.WriteLine($"Invalid player name {option}");
+                    Console.WriteLine("Would you like to keep searching? (Y/N)");
                     string answer = Console.ReadLine();
                     if (answer != "Y")
                     {
@@ -120,18 +121,38 @@ namespace NFLReportsApp
 
         public static void ShowMenu()
         {
-            
             var engine = new PlayerSearchEngine();
-            // var Team = Console.ReadLine();     
-            Console.WriteLine("Which player would you like to search for?");
-            var Name = Console.ReadLine();
-            engine.SearchPlayers(Name);
-            Console.WriteLine("Would you like to keep searching? (Y/N)");
-            string answer = Console.ReadLine();
-            if (answer != "Y")
+            var keepSearching = true;
+            while(keepSearching)
             {
-                keepTrying = false;
+                Console.WriteLine("Search Player or Quit?");
+                var action = Console.ReadLine();
+                if(action == "Search Player")
+                {
+                    Console.WriteLine("Which player would you like to search for?");
+                    var Name = Console.ReadLine();
+                    engine.SearchPlayers(Name);
+                }
+                else if(action == "Quit")
+                {
+                    keepSearching = false;
+                }
+                else
+                {
+                    Console.WriteLine(action + " is not a valid command");
+                }
             }
+            //var engine = new PlayerSearchEngine();
+            //// var Team = Console.ReadLine();     
+            //Console.WriteLine("Which player would you like to search for?");
+            //var Name = Console.ReadLine();
+            //engine.SearchPlayers(Name);
+            //Console.WriteLine("Would you like to keep searching? (Y/N)");
+            //string answer = Console.ReadLine();
+            //if (answer != "Y")
+            //{
+            //    keepTrying = false;
+            //}
 
 
             // display a player - return if null - write players to a file use serialize 

@@ -115,7 +115,15 @@ namespace NFLReportsApp
             }
         }
 
-        
+        public static void ReadFromFile()
+        {
+            // Read the file as one string.
+            string text = System.IO.File.ReadAllText(@"C:\Users\blare_robinson\Documents\DataSheet\Cleveland.txt");
+
+            // Display the file contents to the console. Variable text is a string.
+            Console.WriteLine("Contents of WriteText.txt = {0}", text);
+
+        }
 
         public static void ShowMenu()
         {
@@ -132,8 +140,6 @@ namespace NFLReportsApp
                     var Name = Console.ReadLine();                
                     engine.SearchPlayers(Name);
                     engine.GetAllPlayers();
-                    Console.WriteLine(Name + " is not a valid command");
-                   
                 }
                 else if(action == "Quit")
                 {
@@ -141,7 +147,7 @@ namespace NFLReportsApp
                 }
                 else
                 {
-                    
+                    //IS THERE A WAY TO ADD PLAYERS NAME TO CODE BELOW SO IT RETURNS INVALID
                     Console.WriteLine(action + " is not a valid command");                  
                 }
             }

@@ -34,7 +34,11 @@ namespace NFLReportsApp
                         DisplayPlayers(matchingPlayer);
                         break;
                     case 3:
-                        keepSearching = false;
+                        string answer = Console.ReadLine();
+                        if (answer != "Y")
+                        {
+                            keepTrying = false;
+                        }
                         return;
 
                 }
@@ -103,7 +107,7 @@ namespace NFLReportsApp
                 }
                 else
                 {                  
-                   // Console.WriteLine($"Invalid player name {option}");
+                    Console.WriteLine($"Invalid player name {option}");
                     string answer = Console.ReadLine();
                     if (answer != "Y")
                     {
@@ -116,17 +120,20 @@ namespace NFLReportsApp
 
         public static void ShowMenu()
         {
-            // Console.WriteLine("Which NFL team would you like?");
+            
             var engine = new PlayerSearchEngine();
-           // var Team = Console.ReadLine();
-            Console.WriteLine("1) Get a list of players by their first name");
+            // var Team = Console.ReadLine();     
+            Console.WriteLine("Which player would you like to search for?");
             var Name = Console.ReadLine();
             engine.SearchPlayers(Name);
-            Console.WriteLine("2) Search a player by full name");
-            var fullName = Console.ReadLine();
-            engine.SearchPlayers(Name);
-            Console.WriteLine("3) Would you like to keep searching? (Y/N)");
-            
+            Console.WriteLine("Would you like to keep searching? (Y/N)");
+            string answer = Console.ReadLine();
+            if (answer != "Y")
+            {
+                keepTrying = false;
+            }
+
+
             // display a player - return if null - write players to a file use serialize 
 
 

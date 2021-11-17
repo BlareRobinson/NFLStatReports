@@ -47,22 +47,18 @@ namespace NFLReportsApp
 
         }
 
-        private static void DisplayPlayers(object allPlayers)
-        {
-            throw new NotImplementedException();
-        }
-
-        public class Root
-        {
-            public List<Player> player { get; set; }
-        }
+       
 
         //private static void DisplayPlayers(object allPlayers)
         //{
-        //    throw new NotImplementedException();
+        //    Console.WriteLine($"Here is  + ");
         //}
 
-        public static void DisplayPlayers(List<Player> allPlayers)
+
+
+
+
+        public static void DisplayPlayers(List<DisplayPlayers> allPlayers)
         {
             if (allPlayers.Count == 0)
             {
@@ -71,7 +67,7 @@ namespace NFLReportsApp
             var i = 0;
             foreach (var player in allPlayers)
             {
-                Console.WriteLine($"{++i}) {player.idPlayer}");
+                Console.WriteLine($"{++i}) {player.strPlayer}");
             }
         }
 
@@ -119,19 +115,25 @@ namespace NFLReportsApp
             }
         }
 
+        
+
         public static void ShowMenu()
         {
             var engine = new PlayerSearchEngine();
             var keepSearching = true;
             while(keepSearching)
             {
-                Console.WriteLine("Search Player or Quit?");
+                Console.WriteLine("Type: Search Player or Quit?");
+                
                 var action = Console.ReadLine();
                 if(action == "Search Player")
                 {
                     Console.WriteLine("Which player would you like to search for?");
-                    var Name = Console.ReadLine();
+                    var Name = Console.ReadLine();                
                     engine.SearchPlayers(Name);
+                    engine.GetAllPlayers();
+                    Console.WriteLine(Name + " is not a valid command");
+                   
                 }
                 else if(action == "Quit")
                 {
@@ -139,7 +141,8 @@ namespace NFLReportsApp
                 }
                 else
                 {
-                    Console.WriteLine(action + " is not a valid command");
+                    
+                    Console.WriteLine(action + " is not a valid command");                  
                 }
             }
             //var engine = new PlayerSearchEngine();

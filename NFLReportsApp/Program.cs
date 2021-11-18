@@ -98,13 +98,8 @@ namespace NFLReportsApp
                 }
                 else
                 {
-                    //  Console.WriteLine($"Invalid player name {option}");
-                    Console.WriteLine("Would you like to keep searching? (Y/N)");
-                    string answer = Console.ReadLine();
-                    if (answer != "Y")
-                    {
-                        // can delete later keepTrying = false;
-                    }
+                   Console.WriteLine($"Invalid player name {option}");
+                    
                 }
                          
             }
@@ -122,7 +117,7 @@ namespace NFLReportsApp
                 Console.WriteLine("Type: Search NFL Player, Cleveland Browns or Quit?");
                 
                 var action = Console.ReadLine();
-                if (action == "Search Player")
+                if (action == "Search NFL Player")
                 {
                     Console.WriteLine("Which player would you like to search for?");
                     var Name = Console.ReadLine();

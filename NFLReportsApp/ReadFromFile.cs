@@ -23,5 +23,10 @@ namespace NFLReportsApp
                 Console.WriteLine(e.Message);
             }
         }
+
+        internal object SearchFiles(object searchText)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

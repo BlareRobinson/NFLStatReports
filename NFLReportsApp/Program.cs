@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
@@ -8,11 +9,11 @@ namespace NFLReportsApp
 {
     class Program
     {
-       
+        public static string line;
 
         static void Main(string[] args)
         {
-
+            var searchFile = new ReadFromFile();
             var searchEngine = new PlayerSearchEngine();
             // searchEngine.Initialize();
 
@@ -33,7 +34,12 @@ namespace NFLReportsApp
                         DisplayPlayers(matchingPlayer);
                         break;
                     case 3:
-               
+                        var searchText = GetTextSearch();
+                        var matchingFile = searchFile.SearchFiles(searchText);
+                        break;
+
+                    case 4:
+                        keepSearching = false;
                         return;
 
                 }
@@ -42,7 +48,10 @@ namespace NFLReportsApp
 
         }
 
-
+        private static object GetTextSearch()
+        {
+            throw new NotImplementedException();
+        }
 
         public static void DisplayPlayers(List<DisplayPlayers> allPlayers)
         {
@@ -105,28 +114,33 @@ namespace NFLReportsApp
 
         public static void ShowMenu()
         {
+            var reader = new ReadFromFile();
             var engine = new PlayerSearchEngine();
             var keepSearching = true;
             while(keepSearching)
             {
-                Console.WriteLine("Type: Search Player, Cleveland Browns, or Quit?");
+                Console.WriteLine("Type: Search NFL Player, Cleveland Browns or Quit?");
                 
                 var action = Console.ReadLine();
-                if(action == "Search Player")
+                if (action == "Search Player")
                 {
                     Console.WriteLine("Which player would you like to search for?");
-                    var Name = Console.ReadLine();                
+                    var Name = Console.ReadLine();
                     engine.SearchPlayers(Name);
                     engine.GetAllPlayers();
                 }
-                else if(action == "Quit")
+                else if (action == "Cleveland Browns")
+                {
+                    reader.ReadFromText();
+                }
+                else if (action == "Quit")
                 {
                     keepSearching = false;
                 }
                 else
                 {
                     //IS THERE A WAY TO ADD PLAYERS NAME TO CODE BELOW SO IT RETURNS INVALID
-                    Console.WriteLine(action + " is not a valid command");                  
+                    Console.WriteLine(action + " is not a valid command");
                 }
             }
             //var engine = new PlayerSearchEngine();

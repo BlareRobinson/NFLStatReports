@@ -6,6 +6,6 @@ namespace NFLReportsApp
 {
     public class PlayerQueryResult
     {
-        public List<Player> player { get; set; }
+        public List<DisplayPlayers> player { get; set; }
     }
 }

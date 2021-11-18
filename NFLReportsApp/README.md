@@ -1,6 +1,6 @@
 # NFLReportsApp
 
-C# project - Console App that pulls Players from the NFL stats/data from an API.
+A Console App that pulls Players stats/data in the NFL, from an API. This App asks the User if they would like to search for a player or quit out the app. If they select "Serach for Player" they are then prompted to enter the Players name. Once they in the players name, that plays info is pulled from the API.
 
 
 # Basic Requirements
@@ -21,9 +21,9 @@ C# project - Console App that pulls Players from the NFL stats/data from an API.
 
 # Feature Requirements
 
-* Master-Loop
-* 
-*
+* Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program
+* Connect to an external/3rd party API and read data into your app
+* Read data from an external file, such as text, JSON, CSV, etc and use that data in your application
 
 # Special Instructions
 

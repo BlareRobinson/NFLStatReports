@@ -8,9 +8,9 @@ namespace NFLReportsApp
 {
     public class PlayerSearchEngine
     {
-        private JsonReader playerJson;
+        
 
-        public List<Player> AllPlayers { get; private set; }
+        public List<DisplayPlayers> AllPlayers { get; private set; }
 
         public PlayerSearchEngine()
         {
@@ -29,12 +29,12 @@ namespace NFLReportsApp
             }
         }
 
-        public List<Player> GetAllPlayers()
+        public List<DisplayPlayers> GetAllPlayers()
         {
             return AllPlayers;
         }
 
-        public List<Player> SearchPlayers(string searchName)
+        public List<DisplayPlayers> SearchPlayers(string searchName)
         {
             var safeSearch = System.Uri.EscapeDataString(searchName);
             using (var client = new HttpClient())
@@ -45,7 +45,7 @@ namespace NFLReportsApp
                 //https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?p=Danny%20Welbeck
                 AllPlayers = result.player;
             }
-            return AllPlayers.Where(t => t.idPlayer.Contains(searchName)).ToList();
+            return AllPlayers.Where(t => t.strPlayer.Contains(searchName)).ToList();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿namespace NFLReportsApp
 {
         // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
-        public class Player
+        public class DisplayPlayers
         {
             public string idPlayer { get; set; }
             public string idTeam { get; set; }

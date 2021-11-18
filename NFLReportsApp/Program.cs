@@ -8,8 +8,7 @@ namespace NFLReportsApp
 {
     class Program
     {
-        private static object searchEngine;
-        private static bool keepTrying;
+       
 
         static void Main(string[] args)
         {
@@ -34,11 +33,7 @@ namespace NFLReportsApp
                         DisplayPlayers(matchingPlayer);
                         break;
                     case 3:
-                        string answer = Console.ReadLine();
-                        if (answer != "Y")
-                        {
-                            keepTrying = false;
-                        }
+               
                         return;
 
                 }
@@ -46,15 +41,6 @@ namespace NFLReportsApp
             }
 
         }
-
-       
-
-        //private static void DisplayPlayers(object allPlayers)
-        //{
-        //    Console.WriteLine($"Here is  + ");
-        //}
-
-
 
 
 
@@ -108,22 +94,14 @@ namespace NFLReportsApp
                     string answer = Console.ReadLine();
                     if (answer != "Y")
                     {
-                        keepTrying = false;
+                        // can delete later keepTrying = false;
                     }
                 }
                          
             }
         }
 
-        public static void ReadFromFile()
-        {
-            // Read the file as one string.
-            string text = System.IO.File.ReadAllText(@"C:\Users\blare_robinson\Documents\DataSheet\Cleveland.txt");
-
-            // Display the file contents to the console. Variable text is a string.
-            Console.WriteLine("Contents of WriteText.txt = {0}", text);
-
-        }
+      
 
         public static void ShowMenu()
         {
@@ -131,7 +109,7 @@ namespace NFLReportsApp
             var keepSearching = true;
             while(keepSearching)
             {
-                Console.WriteLine("Type: Search Player or Quit?");
+                Console.WriteLine("Type: Search Player, Cleveland Browns, or Quit?");
                 
                 var action = Console.ReadLine();
                 if(action == "Search Player")

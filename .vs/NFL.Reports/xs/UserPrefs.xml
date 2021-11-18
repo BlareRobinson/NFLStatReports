@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{03B2155F-3FCE-449F-8936-283FC4E31D43}|Default">
+  <MonoDevelop.Ide.ItemProperties.NFL.Reports PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="NFLReportsApp/NFLBrowseEngine.cs">
+    <Files>
+      <File FileName="NFLReportsApp/NFLBrowseEngine.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="NFL.Reports" expanded="True">
+            <Node name="NFL.Reports" expanded="True">
+              <Node name="NFLReportsApp" expanded="True">
+                <Node name="NFLBrowseEngine.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/blare_robinson/Documents/NFLStatReports/NFLStatReport.cs" relfile="NFLStatReport.cs" line="25" column="1" />
+      <Breakpoint file="/Users/blare_robinson/Documents/NFLStatReports/NFLStatReport.cs" relfile="NFLStatReport.cs" line="28" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

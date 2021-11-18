@@ -39,7 +39,7 @@ namespace NFLReportsApp
             var safeSearch = System.Uri.EscapeDataString(searchName);
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://www.thesportsdb.com/api/v1/json/1/");
+                client.BaseAddress = new Uri("https://www.thesportsdb.com/api/v1/json/2/");
                 var playerJson = client.GetStringAsync("searchplayers.php?p="+safeSearch).Result;
                 var result = JsonConvert.DeserializeObject<PlayerQueryResult>(playerJson);
                 //https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?p=Danny%20Welbeck

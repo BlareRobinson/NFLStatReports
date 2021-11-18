@@ -9,7 +9,7 @@ namespace NFLReportsApp
 {
     class Program
     {
-        public static string line;
+        
 
         static void Main(string[] args)
         {
@@ -17,8 +17,8 @@ namespace NFLReportsApp
             var searchEngine = new PlayerSearchEngine();
             // searchEngine.Initialize();
 
-            var keepSearching = true;
-            while (keepSearching)
+            var searching = true;
+            while (searching)
             {
                 ShowMenu();
                 var option = GetMenuOption();
@@ -39,8 +39,9 @@ namespace NFLReportsApp
                         break;
 
                     case 4:
-                        keepSearching = false;
-                        return;
+                        searching = false;
+                        break;
+                        
 
                 }
 
@@ -70,7 +71,7 @@ namespace NFLReportsApp
 
         {
 
-            while(true)
+            while (true)
             {
                 Console.WriteLine("Enter a players name:");
                 var searchName = Console.ReadLine();
@@ -87,7 +88,7 @@ namespace NFLReportsApp
 
         }
 
-        public static object GetMenuOption()
+        public static int GetMenuOption()
         {
             while (true)
             {
@@ -98,24 +99,25 @@ namespace NFLReportsApp
                 }
                 else
                 {
-                   Console.WriteLine($"Invalid player name {option}");
+                    Console.WriteLine($"Invalid solution {option}");
+
                     
                 }
-                         
+
             }
         }
 
-      
+
 
         public static void ShowMenu()
         {
             var reader = new ReadFromFile();
             var engine = new PlayerSearchEngine();
             var keepSearching = true;
-            while(keepSearching)
+            while (keepSearching)
             {
                 Console.WriteLine("Type: Search NFL Player, Cleveland Browns or Quit?");
-                
+
                 var action = Console.ReadLine();
                 if (action == "Search NFL Player")
                 {
@@ -130,7 +132,9 @@ namespace NFLReportsApp
                 }
                 else if (action == "Quit")
                 {
+                    Console.WriteLine("Thanks for using my App!");
                     keepSearching = false;
+                    
                 }
                 else
                 {
@@ -138,25 +142,10 @@ namespace NFLReportsApp
                     Console.WriteLine(action + " is not a valid command");
                 }
             }
-            //var engine = new PlayerSearchEngine();
-            //// var Team = Console.ReadLine();     
-            //Console.WriteLine("Which player would you like to search for?");
-            //var Name = Console.ReadLine();
-            //engine.SearchPlayers(Name);
-            //Console.WriteLine("Would you like to keep searching? (Y/N)");
-            //string answer = Console.ReadLine();
-            //if (answer != "Y")
-            //{
-            //    keepTrying = false;
-            //}
-
-
-            // display a player - return if null - write players to a file use serialize 
-
+      
 
         }
 
-        
+
     }
 }
-

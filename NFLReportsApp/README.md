@@ -9,7 +9,7 @@ A Console App that pulls Players stats/info in the NFL, from an API. This App as
  * PlayerSearchEngine class
 
 *Create at least one object:
- * Switch 
+ * I created two objects; PlayerSearchEngine and ReadFromFile.
 
 (Using and displaying the data in the application)
 
@@ -27,4 +27,4 @@ A Console App that pulls Players stats/info in the NFL, from an API. This App as
 
 # Special Instructions
 
-* If you have to use and API Key, this is it: 40130162
+* The API data is seen in PlayerSearchEngine.cs on line 43. 

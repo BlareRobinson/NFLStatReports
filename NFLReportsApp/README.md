@@ -1,6 +1,6 @@
 # NFLReportsApp
 
-A Console App that pulls Players stats/data in the NFL, from an API. This App asks the User if they would like to search for a player or quit out the app. If they select "Serach for Player" they are then prompted to enter the Players name. Once they in the players name, that plays info is pulled from the API.
+A Console App that pulls Players stats/info in the NFL, from an API. This App asks the User if they would like to search for a player, the Cleveland Browns (which is an external text file) or quit out of the app. If they select "Serach for Player" they are then prompted to enter the Players name. Once they enter the players name, that players info is pulled from the API.
 
 
 # Basic Requirements

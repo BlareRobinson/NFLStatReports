@@ -99,7 +99,7 @@ namespace NFLReportsApp
                 }
                 else
                 {
-                    Console.WriteLine($"Invalid solution {option}");
+                    //Console.WriteLine($"Invalid solution {option}");
 
                     
                 }
@@ -134,6 +134,7 @@ namespace NFLReportsApp
                 {
                     Console.WriteLine("Thanks for using my App!");
                     keepSearching = false;
+                    Environment.Exit(0);
                     
                 }
                 else
